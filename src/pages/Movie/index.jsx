@@ -5,7 +5,7 @@ const Movie = () => {
     window.onload = function () {
         const key = 'api_key=ccd836b52efab791af19b7ac4941e7c7'
         const baseURL = 'https://api.themoviedb.org/3'
-        const apiURL = baseURL + '/discover/movie?sort_by=popularity.desc&' + key
+        const apiURL = baseURL + '/search/movie?query=' + localStorage.getItem("mykey") + '&' + key
         const main = document.getElementById('main')
 
         getMovies(apiURL)
