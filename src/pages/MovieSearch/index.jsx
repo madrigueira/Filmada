@@ -1,7 +1,7 @@
 import "./index.scss";
 import Header from "../../components/Header";
 
-const Movie = () => {
+const Search = () => {
   window.onload = function () {
     const key = "&api_key=ccd836b52efab791af19b7ac4941e7c7"; // Chave da API
     const mainURL = "https://api.themoviedb.org/3"; // URL padrão da API
@@ -23,6 +23,11 @@ const Movie = () => {
     function showMovies(data) {
       data.forEach((movie) => {
         const movieElement = document.createElement("div");
+        movieElement.onclick = function(){
+          const IdMovie = movie.id
+          localStorage.setItem("IdMovie", IdMovie);
+          window.location.href = "/movie";
+        }
         movieElement.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
           <h3>${movie.title}</h3>
@@ -34,7 +39,7 @@ const Movie = () => {
   };
 
   return (
-    <div className="main-movie">
+    <div className="main-search">
       <div className="container">
         <Header />
         <div id="movies"></div>
@@ -43,4 +48,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default Search;

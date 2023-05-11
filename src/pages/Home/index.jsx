@@ -19,7 +19,7 @@ const Home = () => {
             id="nameMovie"
             placeholder="Ex: Avengers Endgame"
           />
-          <a onClick={searchMovie} href="./movie">
+          <a onClick={searchMovie} href="./search">
             <AiOutlineSearch />
           </a>
         </div>

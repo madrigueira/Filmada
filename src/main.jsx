@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
-import Movie from "./pages/MovieSearch";
+import Search from "./pages/MovieSearch";
+import Movie from "./pages/MovieSinglePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "search",
+    element: <Search />,
   },
   {
     path: "movie",
