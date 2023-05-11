@@ -1,63 +1,62 @@
-@import '../../';
+@import "../../";
 
-.home{
-    display: flex;
-    background-color: $gray;
-    height: 100vh;
+.main-home {
+  display: flex;
+  background-color: $gray;
+  height: 100vh;
+  align-items: center;
+
+  .container {
+    @include flex;
+    flex-direction: column;
     align-items: center;
 
-    .container{
-        @include flex;
-        flex-direction: column;
-        align-items: center;
+    .search {
+      display: flex;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 25px;
 
-        .search{
-            display: flex;
-            width: 100%;
-            max-width: 600px;
-            margin-top: 40px;
+      input {
+        width: 100%;
+        height: 50px;
+        padding-left: 50px;
+        border: 0;
+        border-radius: 5px 0 0 5px;
+        font-size: 1.5em;
+        text-align: center;
+        color: $gray;
+        outline: none;
 
-            input{
-                width: 100%;
-                height: 50px;
-                padding-left: 50px;
-                border: 0;
-                border-radius: 5px 0 0 5px;
-                font-size: 1.5em;
-                text-align: center;
-                color: $gray;
-                outline: none;
+        &::placeholder {
+          font-size: 0.9em;
+        }
+      }
 
-                &::placeholder{
-                    font-size: .9em;
-                }
-            }
+      a {
+        height: 50px;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 0 5px 5px 0;
+        background-color: $white;
+        font-size: 1.5em;
+        transition: 0.2s;
+        cursor: pointer;
 
-            button{
-                width: 50px;
-                height: 50px;
-                padding-top: 7px;
-                border: 0;
-                border-radius: 0 5px 5px 0;
-                background-color: $white;
-                font-size: 1.5em;
-                transition: .2s;
-                cursor: pointer;
-
-                &:hover{
-                    background-color: darken($white, 10);
-                }
-
-                path{
-                    color: $gray;
-                }
-            }
+        &:hover {
+          background-color: darken($white, 10);
         }
 
-        p{
-            margin-top: 10px;
-            font-size: 1em;
-            font-weight: 300;
+        path {
+          color: $gray;
         }
+      }
     }
+
+    p {
+      margin-top: 20px;
+      font-size: 1em;
+      font-weight: 300;
+    }
+  }
 }
