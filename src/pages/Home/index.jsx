@@ -3,6 +3,14 @@ import Logo from "../../components/Logo";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Home = () => {
+  window.onload = function () {
+    nameMovie.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        btnSearch.click();
+      }
+    });
+  };
+
   function searchMovie() {
     const nameMovie = document.getElementById("nameMovie");
     const nameMovieValue = nameMovie.value;
@@ -19,7 +27,7 @@ const Home = () => {
             id="nameMovie"
             placeholder="Ex: Avengers Endgame"
           />
-          <a onClick={searchMovie} href="./search">
+          <a onClick={searchMovie} href="./search" id="btnSearch">
             <AiOutlineSearch />
           </a>
         </div>
