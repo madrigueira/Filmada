@@ -1,5 +1,7 @@
 import "./index.scss";
+import { createRoot } from "react-dom/client";
 import Header from "../../components/Header";
+import MovieCard from "../../components/MovieCard";
 
 const Search = () => {
   window.onload = function () {
@@ -23,15 +25,16 @@ const Search = () => {
     function showMovies(data) {
       data.forEach((movie) => {
         const movieElement = document.createElement("div");
-        movieElement.onclick = function(){
-          const IdMovie = movie.id
+        movieElement.onclick = function () {
+          const IdMovie = movie.id;
           localStorage.setItem("IdMovie", IdMovie);
           window.location.href = "/movie";
-        }
-        movieElement.innerHTML = `
-          <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-          <h3>${movie.title}</h3>
-        `;
+        };
+
+        const poster = "https://image.tmdb.org/t/p/w500/";
+        createRoot(movieElement).render(
+          <MovieCard title={movie.title} poster={poster + movie.poster_path} />
+        );
 
         movies.appendChild(movieElement);
       });
