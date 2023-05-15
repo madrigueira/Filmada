@@ -1,10 +1,14 @@
 import "./index.scss";
 
-const MovieCard = ({ poster, title }) => {
+const MovieCard = ({ poster }) => {
   return (
     <div className="main-moviecard">
-      <img src={poster} />
-      <h3>{title}</h3>
+      <div className="box" style={{ backgroundImage: `url(${poster})` }}>
+        <div className="blur"></div>
+        <div className="content">
+          <h1>kek</h1>
+        </div>
+      </div>
     </div>
   );
 };

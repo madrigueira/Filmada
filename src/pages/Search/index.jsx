@@ -33,7 +33,7 @@ const Search = () => {
 
         const poster = "https://image.tmdb.org/t/p/w500/";
         createRoot(movieElement).render(
-          <MovieCard title={movie.title} poster={poster + movie.poster_path} />
+          <MovieCard poster={poster + movie.poster_path} />
         );
 
         movies.appendChild(movieElement);

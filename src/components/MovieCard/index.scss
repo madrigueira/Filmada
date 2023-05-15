@@ -1,7 +1,7 @@
 @import "../../";
 
 .main-moviecard {
-  padding: 0 10px;
+  height: 100%;
   transition: 0.2s;
   cursor: pointer;
 
@@ -9,16 +9,34 @@
     scale: 1.05;
   }
 
-  img {
+  .box {
+    position: relative;
     width: 100%;
     aspect-ratio: 1/1.5;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-  }
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
 
-  h3 {
-    font-size: 1em;
-    font-weight: 400;
+    &:hover {
+      .blur {
+        backdrop-filter: blur(3px);
+        // background-color: $primary;
+      }
+    }
+
+    .blur {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
   }
 }

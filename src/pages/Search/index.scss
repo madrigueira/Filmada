@@ -3,7 +3,7 @@
 .main-search {
   display: flex;
   flex-direction: column;
-  background-color: $gray;
+  background-color: $bg;
   min-height: 100vh;
   padding-bottom: 50px;
 
@@ -16,7 +16,8 @@
       display: grid;
       $size: calc(100% / 5);
       grid-template-columns: $size $size $size $size $size;
-      row-gap: 45px;
+      gap: 45px 20px;
+      width: calc(100% - 20px * 4);
     }
   }
 }
