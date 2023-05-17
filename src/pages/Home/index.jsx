@@ -22,11 +22,7 @@ const Home = () => {
       <div className="container">
         <Logo size="4em" />
         <div className="search">
-          <input
-            type="text"
-            id="nameMovie"
-            placeholder="Ex: Avengers Endgame"
-          />
+          <input type="text" id="nameMovie" placeholder="Ex: Vingadores" />
           <a onClick={searchMovie} href="./search" id="btnSearch">
             <AiOutlineSearch />
           </a>

@@ -20,8 +20,11 @@
 
     &:hover {
       .blur {
-        backdrop-filter: blur(3px);
-        // background-color: $primary;
+        opacity: 1;
+      }
+
+      .content {
+        opacity: 1;
       }
     }
 
@@ -29,14 +32,43 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      opacity: 1;
+      backdrop-filter: blur(2px);
+      background-image: linear-gradient(180deg, #000000c2 0%, transparent);
+      opacity: 0;
+      transition: 0.3s;
     }
 
     .content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      align-items: end;
       position: absolute;
       width: 100%;
       height: 100%;
+      padding: 15px;
       z-index: 1;
+      opacity: 0;
+      transition: 0.3s;
+
+      a {
+        display: flex;
+        padding: 2px 10px;
+        border: 2px solid $text;
+        border-radius: 15px;
+        line-height: 1em;
+        justify-content: center;
+
+        svg {
+          margin-right: 2px;
+        }
+      }
     }
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: 400;
+    padding: 5px 0 0 5px;
   }
 }
