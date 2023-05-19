@@ -2,6 +2,7 @@ import "./index.scss";
 import { createRoot } from "react-dom/client";
 import Header from "../../components/Header";
 import MovieCard from "../../components/MovieCard";
+import poster404 from "../../content/poster_404.png";
 
 const Search = () => {
   window.onload = function () {
@@ -35,7 +36,7 @@ const Search = () => {
 
         let poster = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
         if (movie.poster_path === null) {
-          poster = "../src/content/poster_404.png";
+          poster = poster404;
         }
 
         let year = movie.release_date.substring(0, 4);
