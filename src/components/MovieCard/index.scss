@@ -53,11 +53,12 @@
 
       a {
         display: flex;
+        justify-content: center;
         padding: 2px 10px;
         border: 2px solid $text;
         border-radius: 15px;
+        font-size: 0.9em;
         line-height: 1em;
-        justify-content: center;
 
         svg {
           margin-right: 2px;
