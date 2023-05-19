@@ -35,7 +35,7 @@ const Search = () => {
 
         let poster = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
         if (movie.poster_path === null) {
-          poster = "./src/content/poster_404.png";
+          poster = "../src/content/poster_404.png";
         }
 
         let year = movie.release_date.substring(0, 4);
