@@ -2,17 +2,14 @@ import "./index.scss";
 import { createRoot } from "react-dom/client";
 import Header from "../../components/Header";
 import MovieCard from "../../components/MovieCard";
+import { mainURL, language, key } from "../../assets/apiConfig";
 import poster404 from "../../content/poster_404.png";
 
 const Search = () => {
   window.onload = function () {
-    const key = "&api_key=ccd836b52efab791af19b7ac4941e7c7"; // Chave da API
-    const mainURL = "https://api.themoviedb.org/3"; // URL padrão da API
     const nameMovie = localStorage.getItem("nameMovieValue"); // Nome do filme salvo no local storage
-    const language = "&language=pt-BR";
-
     const searchURL =
-      mainURL + "/search/movie?query=" + nameMovie + language + key; // URL de pesquisa dos filmes
+      mainURL + "/search/movie?query=" + nameMovie + "&" + language + "&" + key; // URL de pesquisa dos filmes
     const movies = document.getElementById("movies"); // Div onde vão aparecer os filmes
 
     getMovies(searchURL);

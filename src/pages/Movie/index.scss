@@ -3,7 +3,8 @@
 .main-movie {
   display: flex;
   flex-direction: column;
-  background-color: $bg;
+  background: $bg no-repeat;
+  background-size: cover;
   min-height: 100vh;
   padding-bottom: 50px;
 }
