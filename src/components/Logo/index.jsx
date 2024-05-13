@@ -8,7 +8,7 @@ const Logo = ({ size }) => {
 
   useEffect(() => {
     const typed = new Typed(logo.current, {
-      strings: ["Filmada."],
+      strings: ["Filmadaaaaaaaa."],
       typeSpeed: 150,
       showCursor: false,
     });
